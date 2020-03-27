@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/img/weather.png">
+    <link rel="stylesheet" href="./css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Weather</title>
+</head>
+
+<body>
+  <div class="content">
+
+        {{>header}} 
+        <p>check for a weather update</p>
+
+        <form>
+              <input type="text" placeholder="Location">
+              <button>search</button>
+        </form>
+      <p id='message1'></p>
+      <p id='message2'></p>
+        
+  </div>          
+        {{>footer}} 
+     <script src='./js/appfront.js'></script>
+</body>
+</html>
