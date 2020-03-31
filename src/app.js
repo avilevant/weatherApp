@@ -9,6 +9,7 @@ const weather = require('./utils/weather')
 const publicDirPath = path.join(__dirname, '../public');
 const viewPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
+const port = process.env.PORT || 3000
 
 //set location using handlebars
 app.set('view engine', 'hbs')
@@ -112,6 +113,6 @@ app.get('*', (req, res) => {
 });
 
 
-app.listen(3000, () => {
-    console.log('server is working on port 3000')
+app.listen(port, () => {
+    console.log('server is working on port' + port)
 });
