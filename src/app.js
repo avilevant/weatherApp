@@ -70,10 +70,13 @@ app.get('/weather', (req, res) => {
         })
     }
 
-    geoCode(req.query.address, (error, { latitude, longtitude, location }) => {
+    geoCode(req.query.address, (error, { latitude, longtitude, location } = {}) => {
+        console.log('check start', error, { latitude, longtitude, location })
         if (error) {
             return res.send({ error })
         }
+
+
         let context = {
             location: location,
             latitude: latitude,
