@@ -9,7 +9,7 @@ const weather = require('./utils/weather')
 const publicDirPath = path.join(__dirname, '../public');
 const viewPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3003
 
 //set location using handlebars
 app.set('view engine', 'hbs')
@@ -72,7 +72,7 @@ app.get('/weather', (req, res) => {
     }
 
     geoCode(req.query.address, (error, { latitude, longtitude, location } = {}) => {
-        console.log('check start', error, { latitude, longtitude, location })
+
         if (error) {
             return res.send({ error })
         }

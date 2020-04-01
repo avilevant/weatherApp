@@ -15,7 +15,8 @@ const Weather = (latitude, longtitude, callback) => {
 
             callback('unable to find location', null)
         } else {
-            callback(null, `${body.daily.data[0].summary} it is currently ${body.currently.temperature} deg outside, and there is  ${body.currently.precipProbability}% chance of rain`)
+
+            callback(null, `${body.daily.data[0].summary} it is currently ${Math.floor(body.currently.temperature)} deg outside, and there is  ${body.currently.precipProbability}% chance of rain`)
         }
     });
 }
